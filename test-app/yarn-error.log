@@ -1,0 +1,49 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\asili\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @polymer/polymer eslint webpack style-loader css-loader html-loader
+
+PATH: 
+  C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\libnvvp;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\mpirt;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\compiler;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\PuTTY\;C:\Program Files\TortoiseGit\bin;C:\Program Files;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Users\asili\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\asili\AppData\Local\Programs\Python\Python36\;C:\Users\asili\Anaconda3;C:\Users\asili\Anaconda3\Library\mingw-w64\bin;C:\Users\asili\Anaconda3\Library\usr\bin;C:\Users\asili\Anaconda3\Library\bin;C:\Users\asili\Anaconda3\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Users\asili\AppData\Local\Microsoft\WindowsAp;C:\Users\asili\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Users\asili\AppData\Local\Microsoft\WindowsApps;C:\Program Files\FFmpeg\bin\;
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.3.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "test-app",
+    "version": "0.0.1",
+    "description": "This is a test app that showcases how the Webpack Loader works",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "test",
+      "app",
+      "polymer-webpack-css-loader"
+    ],
+    "author": "Jose Asilis",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Found incompatible module
+      at new MessageError (C:\Users\asili\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at checkOne (C:\Users\asili\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:62444:11)
+      at Object.check (C:\Users\asili\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:62463:5)
+      at C:\Users\asili\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:22803:73
+      at Generator.next (<anonymous>)
+      at step (C:\Users\asili\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:98:30)
+      at C:\Users\asili\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:109:13
+      at <anonymous>
