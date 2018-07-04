@@ -4,6 +4,7 @@ import {
 } from '@polymer/polymer/polymer-element.js';
 
 import './polymer3-app-styles';
+import './polymer-app-styles.css';
 
 /**
  * @customElement
