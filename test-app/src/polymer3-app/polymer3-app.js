@@ -1,10 +1,9 @@
 import {
   html,
   PolymerElement,
-} from '@polymer/polymer/polymer-element.js';
+} from '@polymer/polymer/polymer-element';
 
-import './polymer3-app-styles';
-import './polymer-app-styles.css';
+import './polymer3-app-styles.scss';
 
 /**
  * @customElement
@@ -13,7 +12,7 @@ import './polymer-app-styles.css';
 class Polymer3App extends PolymerElement {
   static get template() {
     return html`
-      <style include="style-element style-element-2">
+      <style include="style-element style-element-2 polymer3-app-styles">
         :host {
           display: block;
         }

@@ -29,11 +29,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader', {
+        test: /\.css|\.s(c|a)ss$/,
+        use: [{
           loader: path.resolve('../src/loader.js'),
-          options: {}
-        }],
+          options: {},
+        }, 'extract-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
