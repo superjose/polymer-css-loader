@@ -33,12 +33,12 @@ function generateDomModule(styleElementName) {
 
 
 function wrapWithTags(styleElementName, parsedFileContents) {
-    return `${styleElementName}.innerHTML = 
+    return `${styleElementName}.innerHTML = \`
         <template>
             <style>
                 ${ parsedFileContents}
             </style>
-        </template>
+        </template>\`
     `;
 }
 

@@ -3,7 +3,9 @@ import {
   PolymerElement,
 } from '@polymer/polymer/polymer-element';
 
-import './polymer3-app-styles.scss';
+// import './polymer3-app-styles.scss?name=polymer3-app';
+// import '../app-1/app-1.scss';
+import './polymer3-app-styles';
 
 /**
  * @customElement
@@ -12,7 +14,7 @@ import './polymer3-app-styles.scss';
 class Polymer3App extends PolymerElement {
   static get template() {
     return html`
-      <style include="style-element style-element-2 polymer3-app-styles">
+      <style include="app-1 polymer3-app-styles style-element">
         :host {
           display: block;
         }
@@ -20,7 +22,7 @@ class Polymer3App extends PolymerElement {
       <h2>Hello {{prop1}}!</h2>
       <input type="text" value="{{prop1}}" />
       <div>
-        Poop
+         😉😉😉😉😉
       </div>
       <div id="he">
         Poop

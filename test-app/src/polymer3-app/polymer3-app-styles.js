@@ -31,4 +31,4 @@ styleElement2.innerHTML = `
     </template>
 `;
 
-styleElement2.register('style-element-2');
+styleElement.register('style-element-2');
