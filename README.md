@@ -1,3 +1,8 @@
+# Current Situation:
+*Unreleased* pre-alpha. 
+
+
+
 # Work In Progress
 This is a work-in-progress and is not available for public consumption yet. The **final availability may change**, as this could never be released. This is just an experiment
 
