@@ -2,7 +2,7 @@
 
 const { getOptions, interpolateName } = require('loader-utils');
 const validateOptions = require('schema-utils');
-const generateTemplate  = require('./templateGenerator');
+const generateTemplate  = require('./src/templateGenerator');
 
 const schema = {
   type: 'object',
@@ -14,6 +14,10 @@ const schema = {
 };
 
 module.exports = function(source) {
+
+  // So Far no need for async since the whole computation is performed in CPU.
+  // The loader is cacheable by default. 
+
   // Get the options from webpack.config.js
   const options = getOptions(this) || {};
   console.log('Hello world :D');

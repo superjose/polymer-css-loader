@@ -25,7 +25,8 @@
   "homepage": "https://github.com/superjose/polymer-css-webpack-loader#readme",
   "devDependencies": {
     "loader-utils": "^1.1.0",
-    "schema-utils": "^0.4.5"
+    "schema-utils": "^0.4.5",
+    "tslint-config-airbnb": "^5.9.2"
   },
   "dependencies": {
     "camelcase": "^5.0.0"
