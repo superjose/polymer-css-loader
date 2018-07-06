@@ -14,32 +14,43 @@ import compiler from './compiler';
 describe('The Loader', async () => {
 
   beforeAll(async () => {
+    // The minified version must be exact as the non-minified version.
     const stats = await compiler('test.css');
+    const statsMin = await compiler('test.css', { minify: true });
+
     this.output = stats.toJson().modules[0].source;
+    this.outputMin = statsMin.toJson().modules[0].source;
 
     this.unparsedStyleElementName = 'test';
     this.parsedStyleElementName = 'test'
+    this.parsedFileContents = `background-color: magenta;`
 
   })
 
   it('Creates the file', async () => {
     expect(this.output).not.toBeNull();
+    expect(this.outputMin).not.toBeNull();
   });
 
   it('Has the CSS contents', async () => {
     const hasCss = this.output.indexOf('background-color: magenta;')
+    const hasCssMin = this.outputMin.indexOf('background-color: magenta;')
     expect(hasCss).not.toBe(-1);
+    expect(hasCssMin).not.toBe(-1);
   })
   
   it('Should have parsed the unparsedStyleElementName properly', () => {
     expect(this.output.indexOf(this.parsedStyleElementName)).not.toBe(-1);
+    expect(this.outputMin.indexOf(this.parsedStyleElementName)).not.toBe(-1);
   })
   it('Should have injected the parsedFileContents', () => {
-    expect(this.template.indexOf(this.parsedFileContents)).not.toBe(-1);
+   expect(this.output.indexOf(this.parsedFileContents)).not.toBe(-1);
+   expect(this.outputMin.indexOf(this.parsedFileContents)).not.toBe(-1);
   })
 
   it('Should have the unparsedStyleElementName as the register', () => {
     const registrationString = `${this.parsedStyleElementName}.register('${this.unparsedStyleElementName}')`;
-    expect(this.template.indexOf(registrationString)).not.toBe(-1);
+    expect(this.output.indexOf(registrationString)).not.toBe(-1);
+    expect(this.outputMin.indexOf(registrationString)).not.toBe(-1);
   })
 })

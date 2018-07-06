@@ -32,7 +32,9 @@ module.exports = {
         test: /\.css|\.s(c|a)ss$/,
         use: [{
           loader: path.resolve('../index.js'),
-          options: {},
+          options: {
+            minify: true,
+          },
         }, 'extract-loader', 'css-loader', 'sass-loader'],
       },
     ],

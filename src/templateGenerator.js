@@ -24,33 +24,32 @@ styleElement.innerHTML = `
  * approach
  */
 function parseStyleElementName(unparsedStyleElementName) {
-    return camelCase(unparsedStyleElementName);
+  return camelCase(unparsedStyleElementName);
 }
 
 function generateDomModule(styleElementName) {
-    return `const ${styleElementName} =  document.createElement('dom-module')`;
+  return `const ${styleElementName} =  document.createElement('dom-module');`;
 }
 
 
 function wrapWithTags(styleElementName, parsedFileContents) {
-    return `${styleElementName}.innerHTML = \`
+  return `${styleElementName}.innerHTML = \`
         <template>
             <style>
                 ${ parsedFileContents}
             </style>
-        </template>\`
-    `;
+        </template>\`;`;
 }
 
 function registerElement(styleElementName, unparsedStyleElementName) {
-    return `
+  return `
         ${styleElementName}.register('${unparsedStyleElementName}');
      `
 }
 
-module.exports = function(unparsedStyleElementName, parsedFileContents) {
-    const styleElementName = parseStyleElementName(unparsedStyleElementName);
-    return `
+module.exports = function (unparsedStyleElementName, parsedFileContents) {
+  const styleElementName = parseStyleElementName(unparsedStyleElementName);
+  return `
         ${generateDomModule(styleElementName)}
         ${wrapWithTags(styleElementName, parsedFileContents)}
         ${registerElement(styleElementName, unparsedStyleElementName)}

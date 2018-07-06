@@ -26,6 +26,11 @@
   "devDependencies": {
     "@types/jasmine": "^2.8.8",
     "@types/node": "^10.5.2",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "17.0.0",
+    "eslint-plugin-import": "2.12.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.9.1",
     "jasmine": "^3.1.0",
     "jasmine-ts": "^0.2.1",
     "loader-utils": "^1.1.0",
@@ -36,6 +41,7 @@
     "webpack": "^4.15.1"
   },
   "dependencies": {
-    "camelcase": "^5.0.0"
+    "camelcase": "^5.0.0",
+    "minify-css-string": "^1.0.0"
   }
 }
