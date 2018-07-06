@@ -9,9 +9,12 @@
   </a>
 </div>
 
+<blockquote>
+This is still an alpha release. While this may have worked well in <i>my</i> machine, the API may still change in the future.
+</blockquote>
 
 # polymer-css-loader
-A loader for webpack that lets you "just import" the CSS into your JavaScript and it automatically creates the Styling JavaScript for you. 
+A loader for webpack that lets you "just import" the CSS into your JavaScript and it automatically creates the Styling JavaScript for you. This is intended for Polymer 3.
 
 # Install:
 ` npm install save-dev polymer-css-loader extract-loader`
@@ -89,6 +92,18 @@ static get template() {
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
 |**[`minify`](#minify)**|`{Boolean}`|`false`|Will minify both the CSS and JavaScript output.
+
+<h2 align="center">Parameters</h2>
+Use URL style parameters at the end of the url of the import. E.g: 
+```javascript
+import './style-2.css?name=maria';
+import './style-1.css?skip';
+```
+
+|Name|Type|Default|Description|
+|:--:|:--:|:-----:|:----------|
+|**[`name`](#minify)**|`{string}`|`false`|Specifies a different name to be used in the include. For example if you do: `import './style-2.css?name=maria';`, you'd use maria like: `<style include="maria">`
+|**[`skip`](#minify)**|`{boolean}`|`N/A`|Just setting this value will skip the css together. This may be useful if you're using React and Polymer or you'd like to include the CSS without 
 
 # Need an example? 
 Navigate to test-app, and then execute: `npm start` and it will launch an express server @ localhost:3000, and then execute webpack. (Remember to have installed webpack-cli)
