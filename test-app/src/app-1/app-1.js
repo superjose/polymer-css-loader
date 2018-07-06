@@ -11,8 +11,9 @@ import {
  */
 class App1 extends PolymerElement {
   static get template() {
+    // Maria in this case doesn't work.
     return html`
-      <style include="style-element style-element-2 polymer3-app-styles">
+      <style include="maria">
       </style>
       <p>This is a dummy JavaScript file. </p>
     `;

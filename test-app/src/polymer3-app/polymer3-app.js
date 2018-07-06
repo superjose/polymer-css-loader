@@ -5,7 +5,7 @@ import {
 
 // import './polymer3-app-styles.scss?name=polymer3-app';
 // import '../app-1/app-1.scss';
-import './polymer3-app-styles';
+import './polymer3-app-styles.scss';
 
 /**
  * @customElement
