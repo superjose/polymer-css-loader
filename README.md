@@ -10,16 +10,20 @@
 </div>
 
 <blockquote>
-This is still an alpha release. While this may have worked well in <i>my</i> machine, the API may still change in the future.
+This is still an alpha release. While this may have worked well in <i>my</i> machine, there may still be unforeseen bugs and the  API may change in the future.
 </blockquote>
 
 # polymer-css-loader
-A loader for webpack that lets you "just import" the CSS into your JavaScript and it automatically creates the Styling JavaScript for you. This is intended for Polymer 3.
+A loader for webpack that lets you "just import" the CSS into your JavaScript and automatically create the Styling JavaScript for you. This is intended for Polymer 3.
 
 # Install:
-` npm install save-dev polymer-css-loader extract-loader`
+```
+npm install save-dev polymer-css-loader extract-loader
+```
 Or
-` yarn add polymer-css-loader extract-loader`
+``` 
+yarn add polymer-css-loader extract-loader -D
+```
 
 
 # Requirements
@@ -87,14 +91,17 @@ static get template() {
 }
 ```
 
-<h2 align="center">Options</h2>
+# Options
 
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
-|**[`minify`](#minify)**|`{Boolean}`|`false`|Will minify both the CSS and JavaScript output.
+|**[`minify`](#minify)**|`{Boolean}`|`false`|When true, it Will minify both the CSS and JavaScript output.
+|**[`defaultSkip`](#minify)**|`{Boolean}`|`false`|When true, Will minify both the CSS and JavaScript output.
 
-<h2 align="center">Parameters</h2>
-Use URL style parameters at the end of the url of the import. E.g: 
+# Files Parameters
+These are appended at the end of the CSS imports in your JavaScript file (Where the component is declared);
+E.g: 
+
 ```javascript
 import './style-2.css?name=maria';
 import './style-1.css?skip';
@@ -103,19 +110,17 @@ import './style-1.css?skip';
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
 |**[`name`](#minify)**|`{string}`|`false`|Specifies a different name to be used in the include. For example if you do: `import './style-2.css?name=maria';`, you'd use maria like: `<style include="maria">`
-|**[`skip`](#minify)**|`{boolean}`|`N/A`|Just setting this value will skip the css together. This may be useful if you're using React and Polymer or you'd like to include the CSS without 
+|**[`skip`](#minify)**|`{boolean}`|`N/A`|Just setting this parameter will skip the css altogether. This may be useful if you're using React and Polymer or you'd like to include the CSS without. E.g: `import './style-2.css?skip'`
+|**[`include`](#minify)**|`{boolean}`|`N/A`|Just setting this parameter will include the css even when defaultSkip is on. This may be useful if you just want to "polymerize" or "web-componentize" a .css/.scss/.less file. E.g:  `import './style-2.css?include'`
 
 # Need an example? 
-Navigate to test-app, and then execute: `npm start` and it will launch an express server @ localhost:3000, and then execute webpack. (Remember to have installed webpack-cli)
+Navigate to [test-app](./test-app), and execute: `npm start`. It will launch an express server @ localhost:3000. Then, run `webpack`. (Remember to have installed webpack-cli)
 
 
 # Why this loader
-Writing a template inside JavaScript is not good for styling CSS or SASS (Some Text Editors and IDEs lose autocomplete and static checking). 
+Writing CSS inside a JavaScript template is cumbersome and we lose autocomplete, and static analysis from our Text Editors and IDEs. Why not have an automatic way that creates these JavaScript templates for us? 
 
-With this, you just include your .css in your Polymer component and the loader takes care for it. 
-
-
-
+With this, you just include your .css in your Polymer component, add the name of the file to the style's include and you're set! The loader takes care for creating the file for you!
 
 # Ideas? Feedback?
 Open a Github issue now! 😊
