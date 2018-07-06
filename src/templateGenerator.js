@@ -1,4 +1,4 @@
-const camelCase = require('camelcase');
+import * as camelCase  from 'camelcase';
 
 /**
  * Generates the code or the template that is required for the styles 
@@ -48,7 +48,7 @@ function registerElement(styleElementName, unparsedStyleElementName) {
      `
 }
 
-module.exports =  function(unparsedStyleElementName, parsedFileContents) {
+export default function(unparsedStyleElementName, parsedFileContents) {
     const styleElementName = parseStyleElementName(unparsedStyleElementName);
     return `
         ${generateDomModule(styleElementName)}
