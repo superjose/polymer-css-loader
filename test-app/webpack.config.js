@@ -31,7 +31,7 @@ module.exports = {
       {
         test: /\.css|\.s(c|a)ss$/,
         use: [{
-          loader: path.resolve('../src/loader.js'),
+          loader: path.resolve('../index.js'),
           options: {},
         }, 'extract-loader', 'css-loader', 'sass-loader'],
       },

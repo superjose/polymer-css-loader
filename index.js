@@ -1,7 +1,7 @@
 // See an explanation: https://webpack.js.org/api/loaders/#examples
-import { getOptions, interpolateName } from 'loader-utils';
-// import validateOptions from 'schema-utils';
-import generateTemplate from './src/templateGenerator';
+const { getOptions, interpolateName } = require('loader-utils');
+const generateTemplate = require('./src/templateGenerator');
+const nameParser = require('./src/nameQueryParser');
 
 module.exports = function(source) {
 
@@ -10,18 +10,21 @@ module.exports = function(source) {
 
   // Get the options from webpack.config.js
   const options = getOptions(this) || {};
-  console.log('Hello world :D');
   
   // File-Loader does this.
   const context = options.context || this.rootContext 
                   || (this.options & this.options.context);
-  const name = interpolateName(this, '[name]', {
+  
+  // The name of the element that we're going to register.
+  // this.resourceQuery in the form of: mystyle.css?name=my-custom-name
+  const registrationName = nameParser(this.resourceQuery);
+
+  const name = interpolateName(this, registrationName, {
     context, 
     content: source
   });
-  console.log('Resource Query', this.resourceQuery)
+  // Generates the JavaScript required for Web Components
   const template = generateTemplate(name, source);
   console.log(template)
-  // return `hello`;
   return template.toString();
 }
