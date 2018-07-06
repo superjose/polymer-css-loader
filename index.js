@@ -18,7 +18,7 @@ module.exports = function (source) {
   // it will get skipped.
   
   if ((options.defaultSkip && !include(query)) || skip(query)) {
-    return source;
+    return  `exports.push([module.id, ${JSON.stringify(source)}, ""]);`; 
   }
 
   // File-Loader does this.
