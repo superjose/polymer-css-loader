@@ -3,7 +3,7 @@
  */
 
 function skip (query) {
-  return /\B(\?|&)skip\b/gi.test(query);
+  return /(\?|\&)skip($|&)/gi.test(query);
 }
 
 /**
@@ -12,7 +12,7 @@ function skip (query) {
  * extension 
  */
 function include(query) {
-  return /\B(\?|&)include\b/gi.test(query);
+  return /(\?|\&)include($|&)/gi.test(query);
 }
 
 module.exports = { skip, include };
