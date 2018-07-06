@@ -111,7 +111,7 @@ import './style-1.css?skip';
 |:--:|:--:|:-----:|:----------|
 |**[`name`](#minify)**|`{string}`|`false`|Specifies a different name to be used in the include. For example if you do: `import './style-2.css?name=maria';`, you'd use maria like: `<style include="maria">`
 |**[`skip`](#minify)**|`{boolean}`|`N/A`|Just setting this parameter will skip the css altogether. This may be useful if you're using React and Polymer or you'd like to include the CSS without. E.g: `import './style-2.css?skip'`
-|**[`include`](#minify)**|`{boolean}`|`N/A`|Just setting this parameter will include the css even when defaultSkip is on. This may be useful if you just want to "polymerize" or "web-componentize" a .css/.scss/.less file. E.g:  `import './style-2.css?include'`
+|**[`include`](#minify)**|`{boolean}`|`N/A`|Just setting this parameter will include the css even when defaultSkip is on. This may be useful if you just want to "polymerize" or "web-componentize" a .css/.scss/.less file. E.g:  `import './style-2.css?include'`. **Note**: `include` will take preference over `skip`.
 
 # Need an example? 
 Navigate to [test-app](./test-app), and execute: `npm start`. It will launch an express server @ localhost:3000. Then, run `webpack`. (Remember to have installed webpack-cli)

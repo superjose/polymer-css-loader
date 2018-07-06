@@ -1,6 +1,6 @@
 import { html, PolymerElement } from '@polymer/polymer/polymer-element';
 
-import './style-1.scss?skip';
+import './style-1.scss';
 import './style-2.css?name=maria';
 class PolymerTestComponent extends PolymerElement {
   static get template() {

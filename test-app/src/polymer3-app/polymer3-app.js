@@ -22,7 +22,8 @@ class Polymer3App extends PolymerElement {
       <h2>Hello {{prop1}}!</h2>
       <input type="text" value="{{prop1}}" />
       <div>
-         😉😉😉😉😉
+      This is Polymer3-app.js   
+      😉😉😉😉😉
       </div>
       <div id="he">
         Poop

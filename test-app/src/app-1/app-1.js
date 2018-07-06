@@ -4,7 +4,6 @@ import {
   html,
   PolymerElement,
 } from '@polymer/polymer/polymer-element';
-// import '../polymer3-app/polymer3-app-styles.scss?name=cachimbo';
 
 /**
  * @customElement
