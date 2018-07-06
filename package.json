@@ -1,5 +1,5 @@
 {
-  "name": "polymer-css-webpack-loader",
+  "name": "polymer-css-loader",
   "version": "0.0.1",
   "description": "Automatically generate the JavaScript style css that is required for Polymer and Web Components, simply by importing the css file",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/superjose/polymer-css-webpack-loader.git"
+    "url": "git+https://github.com/superjose/polymer-css-loader.git"
   },
   "keywords": [
     "polymer",
@@ -20,9 +20,9 @@
   "author": "Jose Asilis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/superjose/polymer-css-webpack-loader/issues"
+    "url": "https://github.com/superjose/polymer-css-loader/issues"
   },
-  "homepage": "https://github.com/superjose/polymer-css-webpack-loader#readme",
+  "homepage": "https://github.com/superjose/polymer-css-loader#readme",
   "devDependencies": {
     "@types/jasmine": "^2.8.8",
     "@types/node": "^10.5.2",
