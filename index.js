@@ -1,5 +1,6 @@
 // See an explanation: https://webpack.js.org/api/loaders/#examples
 const { getOptions, interpolateName } = require('loader-utils');
+const { skip, include } = require('./src/skipParser');
 const nameParser = require('./src/nameQueryParser');
 const template = require('./src/template');
 
@@ -9,6 +10,16 @@ module.exports = function (source) {
 
   // Get the options from webpack.config.js
   const options = getOptions(this) || {};
+  const query = this.resourceQuery;
+  
+  // If the user has set the defaultSkip as true,
+  // then the source will be skipped unless he explicitly
+  // says to include it. Or, if he has specified to skip it,
+  // it will get skipped.
+  
+  if ((options.defaultSkip && !include(query)) || skip(query)) {
+    return source;
+  }
 
   // File-Loader does this.
   const context = this.rootContext || (this.options & this.options.context);

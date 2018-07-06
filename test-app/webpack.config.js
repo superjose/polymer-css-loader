@@ -34,6 +34,7 @@ module.exports = {
           loader: path.resolve('../index.js'),
           options: {
             minify: true,
+            defaultSkip: true,
           },
         }, 'extract-loader', 'css-loader', 'sass-loader'],
       },
